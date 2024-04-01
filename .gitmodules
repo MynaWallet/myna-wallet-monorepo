@@ -4,3 +4,6 @@
 [submodule "packages/contracts/lib/solady"]
 	path = packages/contracts/lib/solady
 	url = https://github.com/vectorized/solady
+[submodule "packages/contracts/lib/openzeppelin-ext"]
+	path = packages/contracts/lib/openzeppelin-ext
+	url = https://github.com/openzeppelin/openzeppelin-contracts

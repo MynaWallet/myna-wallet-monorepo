@@ -1,0 +1,3 @@
+[submodule "packages/contracts/lib/FreshCryptoLib"]
+	path = packages/contracts/lib/FreshCryptoLib
+	url = https://github.com/rdubois-crypto/FreshCryptoLib

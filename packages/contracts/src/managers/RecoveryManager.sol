@@ -9,12 +9,6 @@ import "@auth/Auth.sol";
 /// @author a42x
 /// @notice You can use this contract for recovery manager
 abstract contract RecoveryManager is Auth {
-    /// @notice Length of the RSA public key modulus
-    uint256 private constant _MODULUS_LENGTH = 256;
-    /// @notice Exponent of the RSA public key
-    bytes internal constant _EXPONENT =
-        hex"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010001";
-
     modifier onlyRecoveryManager() {
         require(msg.sender == AccountStorage.layout().recoveryManager, "RecoveryManager: only recovery manager");
         _;

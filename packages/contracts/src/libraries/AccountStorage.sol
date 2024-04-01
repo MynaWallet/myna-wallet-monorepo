@@ -13,13 +13,15 @@ library AccountStorage {
     struct Layout {
         /// @notice base account storage
         bytes owner;
+        /// @notice passkey recovery manager storage
+        bytes32[2] passkey;
+        /// @notice recovery manager's MynaWallet address
+        address recoveryManager;
         /// @notice buffer(gap)
         uint256[50] gap0;
     }
 
     // TODO session key storage
-
-    // TODO recovery key storage
 
     /**
      * @notice Get AccountStorage

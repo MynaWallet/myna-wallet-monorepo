@@ -11,4 +11,5 @@ library Errors {
     error INVALID_MODULUS(bytes modulus);
     error HASH_ALREADY_APPROVED(bytes32 hash);
     error HASH_ALREADY_REJECTED(bytes32 hash);
+    error INVALID_SIGNATURE();
 }

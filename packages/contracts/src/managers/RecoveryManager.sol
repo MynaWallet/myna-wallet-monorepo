@@ -5,9 +5,9 @@ import "@libraries/AccountStorage.sol";
 import "@libraries/Errors.sol";
 import "@auth/Auth.sol";
 
-/// @title OwnerManager contract
+/// @title RecoveryManager contract
 /// @author a42x
-/// @notice You can use this contract for owner manager
+/// @notice You can use this contract for recovery manager
 abstract contract RecoveryManager is Auth {
     /// @notice Length of the RSA public key modulus
     uint256 private constant _MODULUS_LENGTH = 256;
@@ -45,11 +45,5 @@ abstract contract RecoveryManager is Auth {
     /// @param newRecoveryManager new recovery manager address
     function _setRecoveryManager(address newRecoveryManager) internal {
         AccountStorage.layout().recoveryManager = newRecoveryManager;
-    }
-
-    /// @notice Set new passkey
-    /// @param newPasskey new passkey
-    function _setPasskey(bytes32[2] calldata newPasskey) internal {
-        AccountStorage.layout().passkey = newPasskey;
     }
 }

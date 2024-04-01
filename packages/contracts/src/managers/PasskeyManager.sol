@@ -6,9 +6,9 @@ import "@libraries/Errors.sol";
 import "@auth/Auth.sol";
 import "@external/webauthn-sol/WebAuthn.sol";
 
-/// @title OwnerManager contract
+/// @title PasskeyManager contract
 /// @author a42x
-/// @notice You can use this contract for owner manager
+/// @notice You can use this contract for passkey manager
 abstract contract PasskeyManager is Auth {
     /// @notice Set new passkey
     /// @param newPasskey new passkey
@@ -26,14 +26,14 @@ abstract contract PasskeyManager is Auth {
         /// todo validate cert from trusted party that proves the new owner modulus is the valid RSA modulus on the new Myna Card issed by the government.
         (cert);
 
-        // validate R1 signature
-        (bytes32 x, bytes32 y) = getPasskey();
+        // validate passkey signature
+        bytes32[2] memory passkey = getPasskey();
         bool isValid = WebAuthn.verify({
             challenge: abi.encode(challenge),
             requireUV: true,
             webAuthnAuth: abi.decode(signature, (WebAuthn.WebAuthnAuth)),
-            x: uint256(x),
-            y: uint256(y)
+            x: uint256(passkey[0]),
+            y: uint256(passkey[1])
         });
         if (!isValid) {
             revert Errors.INVALID_SIGNATURE();

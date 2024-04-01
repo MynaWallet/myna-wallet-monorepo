@@ -12,3 +12,6 @@ openzeppelin/=lib/openzeppelin-contracts/contracts/
 @interfaces/=src/interfaces/
 @auth/=src/auth/
 @external/=src/external/
+FreshCryptoLib/=lib/FreshCryptoLib/solidity/src/
+openzeppelin-ext/=lib/openzeppelin-ext/
+solady/=lib/solady/src/

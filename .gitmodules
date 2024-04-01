@@ -1,3 +1,6 @@
 [submodule "packages/contracts/lib/FreshCryptoLib"]
 	path = packages/contracts/lib/FreshCryptoLib
 	url = https://github.com/rdubois-crypto/FreshCryptoLib
+[submodule "packages/contracts/lib/solady"]
+	path = packages/contracts/lib/solady
+	url = https://github.com/vectorized/solady

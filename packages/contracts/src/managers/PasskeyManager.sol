@@ -21,7 +21,7 @@ abstract contract PasskeyManager is Auth {
         bytes memory newOwner,
         bytes memory cert,
         bytes32 challenge,
-        bytes memory signatre
+        bytes memory signature
     ) external {
         /// todo validate cert from trusted party that proves the new owner modulus is the valid RSA modulus on the new Myna Card issed by the government.
         (cert);
